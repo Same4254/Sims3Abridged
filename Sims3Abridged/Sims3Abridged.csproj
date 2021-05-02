@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5B349F42-6693-4FCB-9534-AC6425E0D4C9}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Sims3Abridged</RootNamespace>
+    <AssemblyName>Sims3Abridged</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+    <DefineConstants>TRACE;DEBUG;EXTERNAL_SCRIPT</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'InternalBuild|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\InternalBuild\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;INTERNAL_SCRIPT</DefineConstants>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Jupiter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Jupiter.1.6.0\lib\netstandard2.0\Jupiter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
+    <Reference Include="System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
+    <Reference Include="System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
+    <Reference Include="System.Data.DataSetExtensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
+    <Reference Include="System.Net.Http, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="ScriptCore, Version=1.0.5828.20860, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Desktop\Sims3Dlls\ScriptCore.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SimIFace, Version=1.0.0.50, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Desktop\Sims3Dlls\SimIFace.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sims3GameplayObjects, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Desktop\Sims3Dlls\Sims3GameplayObjects.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sims3GameplaySystems, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Desktop\Sims3Dlls\Sims3GameplaySystems.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sims3Metadata, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <HintPath>..\..\..\..\Desktop\Sims3Dlls\Sims3Metadata.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sims3StoreObjects, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Desktop\Sims3Dlls\Sims3StoreObjects.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Desktop\Sims3Dlls\UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <Target Name="InternalScript">
+    <PropertyGroup>
+      <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+      <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+      <ProjectGuid>{5B349F42-6693-4FCB-9534-AC6425E0D4C9}</ProjectGuid>
+      <OutputType>Exe</OutputType>
+      <RootNamespace>Sims3Abridged</RootNamespace>
+      <AssemblyName>Sims3Abridged</AssemblyName>
+      <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+      <FileAlignment>512</FileAlignment>
+      <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+      <Deterministic>true</Deterministic>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+      <DebugSymbols>true</DebugSymbols>
+      <DebugType>full</DebugType>
+      <Optimize>false</Optimize>
+      <OutputPath>bin\Debug\</OutputPath>
+      <DefineConstants>DEBUG;TRACE;INTERNAL_SCRIPT</DefineConstants>
+      <ErrorReport>prompt</ErrorReport>
+      <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+      <InternalReference Include="C:\Users\sns17003\Desktop\Sims3Dlls\mscorlib.dll" />
+      <InternalReference Include="C:\Users\sns17003\Desktop\Sims3Dlls\ScriptCore.dll" />
+      <InternalReference Include="C:\Users\sns17003\Desktop\Sims3Dlls\SimIFace.dll" />
+      <InternalReference Include="C:\Users\sns17003\Desktop\Sims3Dlls\Sims3GameplayObjects.dll" />
+      <InternalReference Include="C:\Users\sns17003\Desktop\Sims3Dlls\Sims3GameplaySystems.dll" />
+      <InternalReference Include="C:\Users\sns17003\Desktop\Sims3Dlls\Sims3Metadata.dll" />
+      <InternalReference Include="C:\Users\sns17003\Desktop\Sims3Dlls\Sims3StoreObjects.dll" />
+      <InternalReference File="C:\Users\sns17003\Desktop\Sims3Dlls\System.dll" />
+      <InternalReference File="C:\Users\sns17003\Desktop\Sims3Dlls\System.Xml.dll" />
+      <InternalReference Include="C:\Users\sns17003\Desktop\Sims3Dlls\UI.dll" />
+    </ItemGroup>
+    <CSC Sources="@(Compile)" References="@(InternalReference)" DefineConstants="$(DefineConstants)" TargetType="library" OutputAssembly="bin/Target.dll" Platform="x86" NoStandardLib="True" EmitDebugInformation="False" AllowUnsafeBlocks="True">
+    </CSC>
+  </Target>
+  <ItemGroup>
+    <Compile Include="BridgeConnection\BridgeConnection.cs" />
+    <Compile Include="BridgeConnection\Buffer\CommunicationBuffer.cs" />
+    <Compile Include="BridgeConnection\Buffer\ExternalCommunicationBuffer.cs" />
+    <Compile Include="BridgeConnection\Buffer\InternalCommunicationBuffer.cs" />
+    <Compile Include="BridgeConnection\ExternalBridgeConnection.cs" />
+    <Compile Include="BridgeConnection\InternalBridgeConnection.cs" />
+    <Compile Include="BridgeConnection\Messege.cs" />
+    <Compile Include="BridgeConnection\Opcodes.cs" />
+    <Compile Include="BridgeConnection\Tasks\ISend.cs" />
+    <Compile Include="BridgeConnection\Tasks\ISendToExternal.cs" />
+    <Compile Include="BridgeConnection\Tasks\ISendToInternal.cs" />
+    <Compile Include="BridgeConnection\Tasks\Task.cs" />
+    <Compile Include="BridgeConnection\Tasks\WriteStringTask.cs" />
+    <Compile Include="ExternalMain.cs" />
+    <Compile Include="InternalMain.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
