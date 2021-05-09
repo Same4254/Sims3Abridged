@@ -54,10 +54,6 @@ namespace Sims3Abridged.BridgeConnection.Buffer {
 
 					setRead(true);
 
-					#if INTERNAL_SCRIPT
-						StyledNotification.Show(new StyledNotification.Format("opcode: " + packet_int_ptr[1] + ", messegeL: " + packet_int_ptr[2], StyledNotification.NotificationStyle.kSystemMessage));
-					#endif
-
 					return new BufferReadSection(packet_int_ptr[1], packet_int_ptr[2], data);
 				}
 			}

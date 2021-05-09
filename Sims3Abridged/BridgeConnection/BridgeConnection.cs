@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using Sims3Abridged.BridgeConnection.Tasks;
 using Sims3Abridged.BridgeConnection.Buffer;
 
+using Sims3.UI;
+
 namespace Sims3Abridged.BridgeConnection {
 	public abstract class BridgeConnection<ReadType, WriteType> where ReadType : class, ISend where WriteType : class, ISend {
 		private CommunicationBuffer communicationBuffer;
@@ -34,7 +36,11 @@ namespace Sims3Abridged.BridgeConnection {
 					Type taskType = Opcodes.getType(currentReadMessege.opcode);
 
 					Task t = (Task)Activator.CreateInstance(taskType);
-					if (t is ISendToExternal)
+					#if INTERNAL_SCRIPT
+						StyledNotification.Show(new StyledNotification.Format("Object type: " + t.GetType().Name + ", opcode: " + currentReadMessege.opcode + ", messegeL: " + currentReadMessege.messegeLength + ", OP Name: " + taskType.Name, StyledNotification.NotificationStyle.kSystemMessage));
+					#endif
+
+					if (typeof(ReadType) == typeof(ISendToExternal))
 						((ISendToExternal)t).onRead(currentReadMessege.data);
 					else
 						((ISendToInternal)t).onRead(currentReadMessege.data);
@@ -47,7 +53,7 @@ namespace Sims3Abridged.BridgeConnection {
 				Task t = writeTasks.Dequeue();
 
 				byte[] data;
-				if(t is ISendToExternal) {
+				if(typeof(WriteType) == typeof(ISendToExternal)) {
 					data = ((ISendToExternal)t).generateData();
 				} else {
 					data = ((ISendToInternal)t).generateData();

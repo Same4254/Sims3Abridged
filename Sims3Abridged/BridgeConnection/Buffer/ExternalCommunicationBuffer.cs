@@ -22,14 +22,18 @@ namespace Sims3Abridged.BridgeConnection.Buffer {
 			}
 
 			this.bufferAddress = addresses.ElementAt(0);
-			//this.bufferAddress = new IntPtr(0x25c0c280);
+			//this.bufferAddress = new IntPtr(0x266f9280);
 			Console.WriteLine("Buffer Address: {0:x}", bufferAddress.ToInt32());
 		}
 
 		public override bool canWrite() {
-			byte[] bytes = memoryModule.ReadVirtualMemory(bufferAddress + writeOffset, 1);
-
-			return bytes[0] == 1;
+			byte[] bytes = memoryModule.ReadVirtualMemory(bufferAddress + writeOffset, 4);
+			unsafe {
+				fixed(byte *ptr = bytes) {
+					int* int_ptr = (int*)ptr;
+					return int_ptr[0] == 1;
+				}
+			}
 		}
 
 		protected override void updateReadSection() {
@@ -42,11 +46,11 @@ namespace Sims3Abridged.BridgeConnection.Buffer {
 		}
 
 		protected override void setWriteBufferSection(byte[] bytes) {
-			memoryModule.WriteVirtualMemory(bufferAddress + writeOffset + 1, bytes);
+			memoryModule.WriteVirtualMemory(bufferAddress + writeOffset + 4, bytes);
 		}
 
 		protected override void setWritten(bool written) {
-			memoryModule.WriteVirtualMemory(bufferAddress + writeOffset, new byte[] { (byte)(written ? 0 : 1) });
+			memoryModule.WriteVirtualMemory(bufferAddress + writeOffset, BitConverter.GetBytes(written ? 0 : 1));//new byte[] { (byte)(written ? 0 : 1) });
 		}
 
 		//public override BufferReadSection read() {

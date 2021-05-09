@@ -30,7 +30,7 @@ namespace Sims3Abridged.BridgeConnection {
 		}
 
 		public void recv(byte[] bytes) {
-			Array.Copy(bytes, 0, data, byteCount, data.Length);
+			Array.Copy(bytes, 0, data, byteCount, bytes.Length);
 			byteCount += bytes.Length;
 		}
 

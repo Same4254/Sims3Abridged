@@ -18,8 +18,8 @@ namespace Sims3Abridged.BridgeConnection.Buffer {
 				}
 			}
 
-			buffer[readOffset] = 1;
-			buffer[writeOffset] = 1;
+			setRead(true);
+			setWritten(false);
 		}
 
 		public override bool canWrite() {
@@ -27,15 +27,23 @@ namespace Sims3Abridged.BridgeConnection.Buffer {
 		}
 
 		protected override void setRead(bool read) {
-			buffer[readOffset] = (byte)(read ? 1 : 0);
+			Array.Copy(BitConverter.GetBytes(read ? 1 : 0), 0, buffer, readOffset, 4);
+
+
+			//buffer[readOffset] = (byte)(read ? 1 : 0);
 		}
 
 		protected override void setWriteBufferSection(byte[] bytes) {
-			Array.Copy(bytes, 0, buffer, writeOffset, bytes.Length);
+			Array.Copy(bytes, 0, buffer, writeOffset + 4, bytes.Length);
 		}
 
 		protected override void setWritten(bool written) {
-			buffer[writeOffset] = (byte)(written ? 0 : 1);
+			unsafe {
+				fixed(byte* ptr = buffer) {
+					int* int_ptr = (int*)(ptr + writeOffset);
+					int_ptr[0] = written ? 0 : 1;
+				}
+			}
 		}
 
 		protected override void updateReadSection() {

@@ -23,14 +23,14 @@ namespace Sims3Abridged.BridgeConnection.Tasks {
 		}
 
 		void ISendToInternal.onRead(byte[] data) {
-			String temp = Encoding.ASCII.GetString(data);
-			StyledNotification.Show(new StyledNotification.Format("Text: (" + data.Length + "): ", StyledNotification.NotificationStyle.kSystemMessage));
+			String text = Encoding.ASCII.GetString(data);
+			StyledNotification.Show(new StyledNotification.Format("Text: (" + data.Length + "): " + text, StyledNotification.NotificationStyle.kSystemMessage));
 		}
 
 		void ISendToExternal.onRead(byte[] data) {
 			#if EXTERNAL_SCRIPT
 				String temp = Encoding.ASCII.GetString(data);
-				Console.WriteLine("Text from internal: ( " + temp + " ): " + temp);
+				Console.WriteLine("Text from internal: ( " + temp.Length + " ): " + temp);
 			#endif
 		}
 	}
