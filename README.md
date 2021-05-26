@@ -18,9 +18,3 @@ The point here is to have the external program modify and read memory of the int
 With the ability for both the external program and internal mod to read and write this regoin of memory, we can set up a protocol to formalize communication in this channel.
 
 Now, the external program can communicate with the internal program to tell the internal mod to do certain actions, while the external program can perform Socketing and other native actions.
-
-## Future Work
-
-1. Currently the external program works outside of the Sims 3 process. This requires certain permissions to do. In the future I want to inject this native code into the game such that the "external" program is no longer external, and would be another thread in the Sims 3 process
-
-2. The entire point of this was to create a mod. The end goal is to provide a mod that allows a streamer to stream their game of Sims 3 to an audience and allow the audience to vote on certain effects to happen in the game (this is where the socket is needed)
