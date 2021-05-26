@@ -136,11 +136,9 @@
     <Compile Include="BridgeConnection\Buffer\CommunicationBuffer.cs" />
     <Compile Include="BridgeConnection\Buffer\ExternalCommunicationBuffer.cs" />
     <Compile Include="BridgeConnection\Buffer\InternalCommunicationBuffer.cs" />
-    <Compile Include="BridgeConnection\ExternalBridgeConnection.cs" />
-    <Compile Include="BridgeConnection\InternalBridgeConnection.cs" />
     <Compile Include="BridgeConnection\Messege.cs" />
     <Compile Include="BridgeConnection\Opcodes.cs" />
-    <Compile Include="BridgeConnection\Tasks\ISend.cs" />
+    <Compile Include="BridgeConnection\Tasks\BurnSimsTask.cs" />
     <Compile Include="BridgeConnection\Tasks\ISendToExternal.cs" />
     <Compile Include="BridgeConnection\Tasks\ISendToInternal.cs" />
     <Compile Include="BridgeConnection\Tasks\Task.cs" />

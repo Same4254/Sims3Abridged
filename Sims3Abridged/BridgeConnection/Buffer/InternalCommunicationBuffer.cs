@@ -28,9 +28,6 @@ namespace Sims3Abridged.BridgeConnection.Buffer {
 
 		protected override void setRead(bool read) {
 			Array.Copy(BitConverter.GetBytes(read ? 1 : 0), 0, buffer, readOffset, 4);
-
-
-			//buffer[readOffset] = (byte)(read ? 1 : 0);
 		}
 
 		protected override void setWriteBufferSection(byte[] bytes) {
@@ -46,8 +43,6 @@ namespace Sims3Abridged.BridgeConnection.Buffer {
 			}
 		}
 
-		protected override void updateReadSection() {
-
-		}
+		protected override void updateReadSection() { }
 	}
 }
