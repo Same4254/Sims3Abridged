@@ -18,3 +18,15 @@ The point here is to have the external program modify and read memory of the int
 With the ability for both the external program and internal mod to read and write this regoin of memory, we can set up a protocol to formalize communication in this channel.
 
 Now, the external program can communicate with the internal program to tell the internal mod to do certain actions, while the external program can perform Socketing and other native actions.
+
+## How To Use
+
+Update the refrecenes of the project! Make sure to refrence the Sims3Dlls!
+
+As stated, this is a two part solution. There is an external program and an internal mod. This project makes use of macros to control what code goes on what side. As such, there is a custom MSBuild target for the internal mod. Use the following command in the development terminal in visual studio to compile the mod dll. Currently this dumps the DLL into the bin directory of the project named "Target.dll". This can be changed in the MSBuild target. At the bottom of the project file, there is the CSC tag which is what dictates how to compile the internal script target. This also specifies the output directory.
+
+```
+MSBuild.exe Sims3Abridged.csproj -t:InternalScript
+```
+
+For the external script, you just need to hit the run button (make sure that it is for x64 for Jupiter to work)
