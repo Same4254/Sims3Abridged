@@ -29,4 +29,4 @@ As stated, this is a two part solution. There is an external program and an inte
 MSBuild.exe Sims3Abridged.csproj -t:InternalScript
 ```
 
-For the external script, you just need to hit the run button (make sure that it is for x64 for Jupiter to work)
+For the external script, you just need to hit the run button when the Sims 3 is at the main menu (make sure that it is for x64 for Jupiter to work). Now it SHOULD find the buffer address. It currently uses a pointer from cheat engine to find it. However you may find that the path does not work (I did several trials so I have moderate confidence in it). If it does not find the buffer, go to the external communication buffer class and comment out the pointer stuff, and just use the scanning (this is all in the constructor of ExternalCommunicationBuffer).
