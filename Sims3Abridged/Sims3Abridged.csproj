@@ -66,31 +66,31 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="ScriptCore, Version=1.0.5828.20860, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\Desktop\Sims3Dlls\ScriptCore.dll</HintPath>
+      <HintPath>Sims3Dlls\ScriptCore.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="SimIFace, Version=1.0.0.50, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\Desktop\Sims3Dlls\SimIFace.dll</HintPath>
+      <HintPath>Sims3Dlls\SimIFace.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Sims3GameplayObjects, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\Desktop\Sims3Dlls\Sims3GameplayObjects.dll</HintPath>
+      <HintPath>Sims3Dlls\Sims3GameplayObjects.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Sims3GameplaySystems, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\Desktop\Sims3Dlls\Sims3GameplaySystems.dll</HintPath>
+      <HintPath>Sims3Dlls\Sims3GameplaySystems.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Sims3Metadata, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
-      <HintPath>..\..\..\..\Desktop\Sims3Dlls\Sims3Metadata.dll</HintPath>
+      <HintPath>Sims3Dlls\Sims3Metadata.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Sims3StoreObjects, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\Desktop\Sims3Dlls\Sims3StoreObjects.dll</HintPath>
+      <HintPath>Sims3Dlls\Sims3StoreObjects.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\Desktop\Sims3Dlls\UI.dll</HintPath>
+      <HintPath>Sims3Dlls\UI.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
@@ -117,16 +117,16 @@
       <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
-      <InternalReference Include="C:\Users\sns17003\Desktop\Sims3Dlls\mscorlib.dll" />
-      <InternalReference Include="C:\Users\sns17003\Desktop\Sims3Dlls\ScriptCore.dll" />
-      <InternalReference Include="C:\Users\sns17003\Desktop\Sims3Dlls\SimIFace.dll" />
-      <InternalReference Include="C:\Users\sns17003\Desktop\Sims3Dlls\Sims3GameplayObjects.dll" />
-      <InternalReference Include="C:\Users\sns17003\Desktop\Sims3Dlls\Sims3GameplaySystems.dll" />
-      <InternalReference Include="C:\Users\sns17003\Desktop\Sims3Dlls\Sims3Metadata.dll" />
-      <InternalReference Include="C:\Users\sns17003\Desktop\Sims3Dlls\Sims3StoreObjects.dll" />
-      <InternalReference File="C:\Users\sns17003\Desktop\Sims3Dlls\System.dll" />
-      <InternalReference File="C:\Users\sns17003\Desktop\Sims3Dlls\System.Xml.dll" />
-      <InternalReference Include="C:\Users\sns17003\Desktop\Sims3Dlls\UI.dll" />
+      <InternalReference Include="Sims3Dlls\mscorlib.dll" />
+      <InternalReference Include="Sims3Dlls\ScriptCore.dll" />
+      <InternalReference Include="Sims3Dlls\SimIFace.dll" />
+      <InternalReference Include="Sims3Dlls\Sims3GameplayObjects.dll" />
+      <InternalReference Include="Sims3Dlls\Sims3GameplaySystems.dll" />
+      <InternalReference Include="Sims3Dlls\Sims3Metadata.dll" />
+      <InternalReference Include="Sims3Dlls\Sims3StoreObjects.dll" />
+      <InternalReference File="Sims3Dlls\System.dll" />
+      <InternalReference File="Sims3Dlls\System.Xml.dll" />
+      <InternalReference Include="Sims3Dlls\UI.dll" />
     </ItemGroup>
     <CSC Sources="@(Compile)" References="@(InternalReference)" DefineConstants="$(DefineConstants)" TargetType="library" OutputAssembly="bin/Target.dll" Platform="x86" NoStandardLib="True" EmitDebugInformation="False" AllowUnsafeBlocks="True">
     </CSC>
@@ -162,6 +162,18 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Sims3DLLs\mscorlib.dll" />
+    <Content Include="Sims3DLLs\ScriptCore.dll" />
+    <Content Include="Sims3DLLs\SimIFace.dll" />
+    <Content Include="Sims3DLLs\Sims3GameplayObjects.dll" />
+    <Content Include="Sims3DLLs\Sims3GameplaySystems.dll" />
+    <Content Include="Sims3DLLs\Sims3Metadata.dll" />
+    <Content Include="Sims3DLLs\Sims3StoreObjects.dll" />
+    <Content Include="Sims3DLLs\System.dll" />
+    <Content Include="Sims3DLLs\System.Xml.dll" />
+    <Content Include="Sims3DLLs\UI.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
