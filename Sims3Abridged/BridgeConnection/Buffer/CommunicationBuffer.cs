@@ -29,7 +29,7 @@ namespace Sims3Abridged.BridgeConnection.Buffer {
 	public abstract class CommunicationBuffer {
 		public static readonly int MAGIC_NUMBER_BYTE_LENGTH = 20;
 		public static readonly int HEADER_BYTE_LENGTH = 16;
-		public static readonly int DATA_BYTE_LENGTH = 100;
+		public static readonly int DATA_BYTE_LENGTH = 500;
 
 		protected byte[] buffer;
 

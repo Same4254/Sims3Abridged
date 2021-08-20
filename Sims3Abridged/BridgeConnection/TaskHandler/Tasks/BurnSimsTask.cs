@@ -14,6 +14,7 @@ namespace Sims3Abridged.BridgeConnection.Tasks {
 			return new byte[] { };
 		}
 
+
 		void ISendToInternal.onRead(byte[] data) {
 			List<Sim> sims = Household.ActiveHousehold.Sims;
 			foreach (Sim poorSoul in sims) {
