@@ -19,7 +19,7 @@ namespace InternalScript {
         private static BridgeConnection connection;
 
         static InternalMain() {
-            connection = new BridgeConnection();
+            connection = BridgeConnection.Instance;
             World.OnWorldLoadFinishedEventHandler += new EventHandler(OnWorldLoadFinished);
         }
 

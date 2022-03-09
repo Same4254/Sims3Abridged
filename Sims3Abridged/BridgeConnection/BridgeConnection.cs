@@ -19,7 +19,17 @@ namespace Sims3Abridged.BridgeConnection {
 		private Queue<Task> writeTasks;
 		private Messege currentReadMessege, currentWritingMessege;
 
-		public BridgeConnection() {
+		private static BridgeConnection instance;
+
+		public static BridgeConnection Instance {
+			get { 
+				if (instance == null) 
+					instance = new BridgeConnection(); 
+				return instance; 
+			}
+		}
+
+		private BridgeConnection() {
 			writeTasks = new Queue<Task>();
 			currentReadMessege = null;
 			currentWritingMessege = null;

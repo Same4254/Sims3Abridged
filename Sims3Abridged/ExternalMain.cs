@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-
+using System.Reflection;
 
 using Sims3Abridged.BridgeConnection;
 using Sims3Abridged.BridgeConnection.Tasks;
@@ -27,7 +27,7 @@ namespace Sims3Abridged {
 		}
 
         static void Main(string[] args) {
-			BridgeConnection.BridgeConnection connection = new BridgeConnection.BridgeConnection();
+			BridgeConnection.BridgeConnection connection = BridgeConnection.BridgeConnection.Instance;
 			inputString = "";
 
 			Thread inputThread = new Thread(ExternalMain.asyncConsoleRead);
@@ -41,6 +41,8 @@ namespace Sims3Abridged {
 							break;
 						else if (inputString == "burn")
 							connection.addWriteTask(new BurnSimsTask());
+						else if (inputString == "asm")
+							connection.addWriteTask(new ASMTask("Sims3TestDll.dll"));
 						else
 							connection.addWriteTask(new WriteStringTask(inputString));
 
